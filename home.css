@@ -1,0 +1,421 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    color: #333;
+    background: #d8bfd8;
+    background: -webkit-linear-gradient(80deg, #d8bfd8 0%, #00a1ce 50%, #b3efff 100%);
+    background: linear-gradient(80deg, #d8bfd8 0%, #00a1ce 50%, #b3efff 100%);
+}
+
+header {
+    backdrop-filter: blur(6px); /* Apply background blur */
+    background-color: rgba(255, 255, 255, 0.0); /* Semi-transparent black background color */
+    color: #fff;
+    padding: 1.5em 0;
+    position: fixed; /* Make it sticky */
+    top: 0; /* Stick it to the top */
+    width: 100%; /* Occupy full width */
+    z-index: 1000; /* Ensure it stays above other content */
+    transition: background-color 5s ease; /* Smooth transition */
+    
+}
+
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+header h1 {
+    margin-left: 3em;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 3em;
+    font-size: 1.2em;
+}
+
+header nav ul li {
+    margin: 0 1em;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative; /* Make the parent element relative */
+    transition: font-size 0.2s ease; /* Apply transition effect to font size */
+}
+
+header nav ul li a:hover {
+    font-size: 1.1em; /* Increase font size on hover */
+}
+
+header nav ul li a::after {
+    content: "";
+    display: none; /* Remove the line */
+}
+
+
+header nav ul li a.active {
+    
+}
+
+header.scrolled h1, 
+header.scrolled nav ul li a {
+    color: #00a1ce; /* Change to your desired color */
+}
+
+.install-link {
+    background-color: #ff6347;
+    padding: 0.5em 1em; /* Adjust padding as needed */
+    border-radius: 20px; /* Optional: Add some rounded corners */
+}
+
+.install-link.scrolled {
+    background-color: #00a1ce;
+    color: #fff;
+}
+
+
+.hero {
+    position: relative;
+    height: 110vh;
+    background: -webkit-linear-gradient(80deg, #d8bfd8 0%, #00a1ce 50%, #b3efff 100%);
+    background: linear-gradient(80deg, #d8bfd8 0%, #00a1ce 50%, #b3efff 100%);
+    color: #fff;
+    background: 
+        linear-gradient(80deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%),
+        linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%);
+    color: #fff;
+    text-align: center;
+    display: flex;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    
+    
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(100px);
+    z-index: -1;
+    transform: translateZ(-1px) scale(7); /* Create the parallax effect */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.image-stack {
+    position: relative;
+    width: 520px; /* Adjust as necessary */
+    height: 520px; /* Adjust as necessary */
+    margin-bottom: 3em;
+    margin-top: 3em;
+    transform: translate(5%, -3%);
+    
+}
+
+.stacked-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*border-radius: 80px;
+    transition: transform 0.3s ease;*/
+    filter: drop-shadow(5px 10px 10px #111);
+   
+    
+    
+}
+
+.stacked-image.front {
+    z-index: 2;
+    transform: scale(1.2);
+    
+    
+    
+}
+
+.stacked-image:nth-child(2) {
+    z-index: 1;
+    transform: translate(-200px, 0px) rotate(-10deg); /* Adjust for the desired overlapping effect */
+    
+}
+
+.stacked-image:nth-child(3) {
+    z-index: 0;
+    transform: translate(200px, 0px) rotate(10deg); /* Adjust for the desired overlapping effect */
+}
+
+.hero h2 {
+    margin-bottom: 0.1em;
+    font-size: 2.0em;
+}
+
+.hero p {
+    margin-bottom: 1.5em;
+    font-size: 1.5em;
+}
+
+.btn {
+    background: #fff;
+    color: #00a1ce;
+    padding: 0.6em 4em;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background-color: #ff6347; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+    font
+}
+
+.features {
+    padding: 2em 1em;
+    background: #F5F5F5;
+    height: 60vh;
+}
+
+.testimonials {
+    padding: 4em 1em;
+     height: 90vh;
+    background: #F5F5F5;
+    
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 4em;
+    color: #FF6347;
+    margin-top: 1.0em;
+    letter-spacing: -1px;
+    
+}
+
+.testimonials h2  {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 4em;
+    color: #FF6347;
+    margin-top: 1.0em;
+    letter-spacing: -1px;
+}
+
+.features .container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 2em;
+    flex-direction: column; /* Add this line to stack items vertically */
+    align-items: center; /* Add this line to center items horizontally */
+    
+}
+
+.testimonials .container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 2em;
+    flex-direction: row; /* Add this line to stack items vertically */
+    align-items: center; /* Add this line to center items horizontally */
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the space between the items as needed */
+    margin-top: -1em;
+    z-index: 1;
+    justify-content: center;
+    
+}
+
+.circle-frame {
+    width: 100px; /* Adjust the size as needed */
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    display: block;
+    
+}
+
+.circle-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    
+}
+
+
+.feature-item, .testimonial-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    max-width: 300px;
+    text-align: center;
+}
+
+
+.video-container {
+    margin-right: 5em;
+}
+
+.feature-item .icon {
+    font-size: 36px; /* Adjust the size of the icon */
+    
+}
+
+.testimonial-item .icon {
+    font-size: 15px; /* Adjust the size of the icon */
+    margin-top: 40 em;
+    
+}
+
+
+.feature-item h3{
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    color: #007bff;
+    
+}
+
+.testimonial-item h4 {
+    color: #007bff;
+}
+.testimonial-item p {
+    font-style: italic;
+    color: #555;
+     margin-bottom: 0.5em;
+    margin-top: 0.8em;
+}
+
+
+.about-us {
+    padding: 4em 1em; /* Adjust padding as needed */
+    background: #F5F5F5; /* Adjust background color as needed */
+    margin-top: 0em;
+}
+
+.about-us h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 4em;
+    color: #FF6347; /* Adjust text color as needed */
+    margin-top:-0.5em;
+    letter-spacing: -1px;
+}
+
+
+.about-item {
+    background: #fff; /* Adjust background color as needed */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    max-width: 300px;
+    text-align: center;
+}
+
+.about-item .circle-frame {
+    width: 100px; /* Adjust circle frame size as needed */
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.about-item .circle-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-item h3 {
+    margin-bottom: 0.5em;
+    color: #007bff; /* Adjust text color as needed */
+}
+
+.about-item p {
+    color: #555; /* Adjust text color as needed */
+    margin-bottom: 0.5em;
+}
+
+
+footer {
+background: -webkit-linear-gradient(80deg, #d8bfd8 0%, #00a1ce 50%, #b3efff 100%);
+    background: linear-gradient(80deg, #d8bfd8 0%, #00a1ce 50%, #b3efff 100%);
+    
+    background: 
+        linear-gradient(80deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%),
+        linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%);
+    color: #fff;
+    text-align: center;
+    padding: 2em 0;
+    position: relative;
+}
+
+footer p {
+    margin: 0.5em 0;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+footer .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.0em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #ff6347;
+}
+
+footer .social-icons i {
+    font-size: 1em;
+}
+
+/*-------------------------*/
+
